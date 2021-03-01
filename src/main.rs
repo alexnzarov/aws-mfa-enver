@@ -12,7 +12,7 @@ async fn main() {
     config::prepare_config();
 
     let config = config::get_config();
-    let client = StsClient::new(rusoto_core::Region::EuNorth1);
+    let client = StsClient::new(config.get_region());
 
     config.populate_process_env();
 
